@@ -1,0 +1,42 @@
+[
+  {
+    "file": "main.py",
+    "line": 1,
+    "category": "LLM02",
+    "severity": "Critical",
+    "explanation": "API key hard-coded in source code.",
+    "fix": "Read it from an environment variable."
+  },
+  {
+    "file": "main.py",
+    "line": 2,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Password stored inside the system prompt.",
+    "fix": "Keep secrets out of prompts."
+  },
+  {
+    "file": "agent.py",
+    "line": 5,
+    "category": "LLM01",
+    "severity": "High",
+    "explanation": "User input concatenated directly into the prompt.",
+    "fix": "Send user input as a separate message and sanitize."
+  },
+  {
+    "file": "agent.py",
+    "line": 6,
+    "category": "LLM10",
+    "severity": "Medium",
+    "explanation": "No max_tokens or rate limit on the model call.",
+    "fix": "Add max_tokens and a timeout."
+  },
+  {
+    "file": "utils.py",
+    "line": 10,
+    "category": "LLM05",
+    "severity": "Critical",
+    "explanation": "LLM output executed in a shell.",
+    "fix": "Never execute model output directly."
+  }
+]
