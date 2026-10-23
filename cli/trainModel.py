@@ -1,10 +1,10 @@
 """
 trainModel.py - teaches the scanner to spot risky lines of code.
 
-How to run (from the cli folder, next to MLDetector.py):
-    python trainModel.py master_dataset_clean.json --out model.joblib
+How to run:
+    python cli\trainModel.py cli\master_dataset_clean.json --out model.joblib
 
-What happens, step by step:
+What happens:
   1. Load the dataset and cleanup
   2. Turn every line of code into one training example (3-line window). Each example gets a label: an OWASP category
      (LLM01 ... LLM10) if the line is risky, or SAFE if it is not.
