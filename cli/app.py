@@ -70,10 +70,10 @@ def export_lcov(findings, output_path="lcov.info"):
 
     with open(output_path, 'w') as out:
         for file_path, lines in file_map.items():
-            out.write("TestName:\n")
-            out.write(f"SourceFile:{file_path}\n")
+            out.write("TN:\n")
+            out.write(f"SF:{file_path}\n")
             for line in sorted(lines):
-                out.write(f"Data:{line},0\n") 
+                out.write(f"DA:{line},0\n") 
             out.write("end_of_record\n")
     print(f"{Colors.GREEN}[+] Coverage exported to {output_path}{Colors.ENDC}")
 

@@ -102,13 +102,10 @@ def make_examples(files):
 def build_model():
     """uses logistic regression to decide which label fits best."""
     features = FeatureUnion([
-        ("characters", TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5),
-                                       lowercase=True, sublinear_tf=True)),
-        ("words", TfidfVectorizer(token_pattern=r"[A-Za-z_][A-Za-z0-9_]*|[^\sA-Za-z0-9_]",
-                                  ngram_range=(1, 3), lowercase=True, sublinear_tf=True)),
+        ("characters", TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5), lowercase=True, sublinear_tf=True)),
+        ("words", TfidfVectorizer(token_pattern=r"[A-Za-z_][A-Za-z0-9_]*|[^\sA-Za-z0-9_]", ngram_range=(1, 3), lowercase=True, sublinear_tf=True)),
     ])
-    return Pipeline([("features", features),
-                     ("classifier", LogisticRegression(C=10, max_iter=3000, class_weight="balanced"))])
+    return Pipeline([("features", features), ("classifier", LogisticRegression(C=10, max_iter=3000, class_weight="balanced"))])
 
 
 def decide(probabilities, classes, threshold):
@@ -139,8 +136,7 @@ def main():
     ap.add_argument("dataset")
     ap.add_argument("--out", default="model.joblib")
     ap.add_argument("--folds", type=int, default=5, help="how many parts to split the data into for the tests")
-    ap.add_argument("--threshold", type=float, default=0.5,
-                    help="how sure the model must be before flagging a line (0-1, higher = stricter)")
+    ap.add_argument("--threshold", type=float, default=0.5, help="how sure the model must be before flagging a line (0-1, higher = stricter)")
     args = ap.parse_args()
 
     files, notes = cleanup(load_records(args.dataset))
@@ -148,12 +144,25 @@ def main():
     classes = sorted(set(labels))
 
     print("About the data")
-    print(f"  tidy-up: {dict(notes)}")
+    print(f"  cleanup: {dict(notes)}")
     print(f"  files: {len(files)} ({dict(Counter(f['kind'] for f in files))}), "
           f"languages: {dict(Counter(f['language'] for f in files))}")
     print(f"  files per category: {dict(Counter(f['category'] for f in files))}")
     print(f"  original files (before copies): {len(set(original_files))}")
     print(f"  lines (examples): {len(labels)}, per label: {dict(Counter(map(str, labels)))}\n")
+
+    categorii = [f['category'] for f in files]
+    distributie = Counter(categorii)
+
+    import matplotlib.pyplot as plt
+    plt.figure(figsize=(10, 6))
+    plt.bar(distributie.keys(), distributie.values(), color='#4C72B0')
+    plt.title('Distribuția Claselor OWASP')
+    plt.xlabel('Categoria')
+    plt.ylabel('Exemple')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig('distributie_clase.png')
 
     splitter = StratifiedGroupKFold(n_splits=args.folds, shuffle=True, random_state=42)
 
@@ -199,6 +208,8 @@ def main():
         json.dump({"threshold": args.threshold, "context": CONTEXT,
                    "classes": [str(c) for c in final.classes_]}, fh, indent=2)
     print(f"\nSaved the model to {args.out} (the threshold is stored in {args.out}.json)")
+
+
 
 
 if __name__ == "__main__":
