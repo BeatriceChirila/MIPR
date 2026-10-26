@@ -1,0 +1,452 @@
+[
+  {
+    "file": "system_prompt_manager.py",
+    "line": 1,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Universal Jailbreak"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 2,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "GPT-4REAL"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 3,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "LiveGPT"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 4,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "APOPHIS"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 5,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Evil Chad 2.1"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 6,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "BasedGPT"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 7,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "DAN 5.0"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 8,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Balakula"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 9,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "TUO"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 10,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Void"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 11,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "DUDE"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 12,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Cosmos DAN"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 13,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "DAN 7.0"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 14,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "OMNI"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 15,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "DUDE v2"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 16,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Moralizing Rant"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 17,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "BasedBOB"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 18,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "JB"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 19,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "UnGPT"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 20,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "New DAN"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 21,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "DAN 9.0"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 22,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Cooper"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 23,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Axies"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 24,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "FR3D"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 25,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Cody"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 26,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Steve"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 27,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Dude v3"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 28,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "ChadGPT"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 29,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Ron"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 30,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "MAN"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 31,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "M78"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 32,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Text Continuation"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 33,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "OMEGA"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 34,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Khajiit"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 35,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Ranti"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 36,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "BISH"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 37,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Jedi Mind Trick"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 38,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Hackerman v2"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 39,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Maximum"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 40,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "BH"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 41,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Eva"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 42,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "NECO"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 43,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Leo"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 44,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "SWITCH"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 45,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Mr. Blonde"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 46,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Coach Bobby Knight"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 47,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Hitchhiker's Guide"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 48,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Burple"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 49,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "Evil Confidant"
+  },
+  {
+    "file": "system_prompt_manager.py",
+    "line": 50,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Jailbreak attempt detected trying to leak system prompts or bypass filters.",
+    "fix": "Implement input guardrails and isolate system prompts from user context.",
+    "payload": "GPT-4 Simulator"
+  }
+]

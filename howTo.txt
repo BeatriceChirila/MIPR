@@ -1,0 +1,4 @@
+How to run
+- run model training with instruction included in model
+- run app.py with python cli\app.py [dirName] --model cli\[model_name].joblib --lcov lcov.info
+- ctrl+shift+p & select Coverage Gutters Extension to go through scanned files and see vulnerable code in the ide.

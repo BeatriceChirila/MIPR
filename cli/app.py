@@ -1,8 +1,8 @@
 import argparse
 import json
-import time
 import sys
 from colorama import init, Fore, Style
+from MLDetector import scan_repo
 init()
 
 
@@ -30,49 +30,26 @@ CATEGORIES = {
     "LLM10": "Unbounded consumption",
 }
 
-FINDINGS = [
-    {"file": "main.py", "line": 1, "category": "LLM02", "severity": "Critical",
-     "explanation": "API key hard-coded in source code.", "fix": "Read it from an environment variable."},
-    {"file": "main.py", "line": 2, "category": "LLM07", "severity": "High",
-     "explanation": "Password stored inside the system prompt.", "fix": "Keep secrets out of prompts."},
-    {"file": "agent.py", "line": 5, "category": "LLM01", "severity": "High",
-     "explanation": "User input concatenated directly into the prompt.",
-     "fix": "Send user input as a separate message and sanitize."},
-    {"file": "agent.py", "line": 6, "category": "LLM10", "severity": "Medium",
-     "explanation": "No max_tokens or rate limit on the model call.", "fix": "Add max_tokens and a timeout."},
-    {"file": "utils.py", "line": 10, "category": "LLM05", "severity": "Critical",
-     "explanation": "LLM output executed in a shell.", "fix": "Never execute model output directly."}
-]
 
-
-def simulate_scan(target_path):
-    print(f"{Colors.BOLD}{Colors.BLUE}[*] Starting LLM Security Guardian scan on: {target_path}{Colors.ENDC}")
-    for i in range(3):
-        time.sleep(0.5)
-        sys.stdout.write("..")
-        sys.stdout.flush()
-    print("\n")
-
-
-def print_scorecard():
+def print_scorecard(findings):
     print(f"{Colors.BOLD}--- COMPLIANCE SCORECARD ---{Colors.ENDC}")
 
-    found_categories = {f['category']: 0 for f in FINDINGS}
-    for f in FINDINGS:
-        found_categories[f['category']] += 1
+    counts = {}
+    for f in findings:
+        counts[f['category']] = counts.get(f['category'], 0) + 1
 
     for cat_id, cat_name in CATEGORIES.items():
-        count = found_categories.get(cat_id, 0)
-        if count > 0:
-            print(f"{Colors.FAIL}[FAIL]{Colors.ENDC} {cat_id}: {cat_name} ({count} findings)")
+        n = counts.get(cat_id, 0)
+        if n > 0:
+            print(f"{Colors.FAIL}[FAIL]{Colors.ENDC} {cat_id}: {cat_name} ({n} findings)")
         else:
             print(f"{Colors.GREEN}[PASS]{Colors.ENDC} {cat_id}: {cat_name}")
     print("\n")
 
 
-def print_findings():
+def print_findings(findings):
     print(f"{Colors.BOLD}--- ANALYSIS RESULTS ---{Colors.ENDC}")
-    for f in FINDINGS:
+    for f in findings:
         color = Colors.FAIL if f['severity'] == 'Critical' else Colors.HIGH if f['severity'] == 'High' else Colors.MEDIUM
         print(
             f"{Colors.BOLD}{f['file']}:{f['line']}{Colors.ENDC} | {color}{f['severity']}{Colors.ENDC} | {f['category']} {CATEGORIES[f['category']]}")
@@ -80,25 +57,52 @@ def print_findings():
         print(f"    {Colors.BOLD}Fix:{Colors.ENDC}   {f['fix']}\n")
 
 
-def export_json(output_path):
+def export_json(findings, output_path):
     with open(output_path, 'w') as f:
-        json.dump(FINDINGS, f, indent=2)
+        json.dump(findings, f, indent=2)
     print(f"{Colors.GREEN}[+] Report successfully exported to {output_path}{Colors.ENDC}")
 
+def export_lcov(findings, output_path="lcov.info"):
+    from collections import defaultdict
+    file_map = defaultdict(set)
+    for f in findings:
+        file_map[f['file']].add(int(f['line']))
+
+    with open(output_path, 'w') as out:
+        for file_path, lines in file_map.items():
+            out.write("TN:\n")
+            out.write(f"SF:{file_path}\n")
+            for line in sorted(lines):
+                out.write(f"DA:{line},0\n") 
+            out.write("end_of_record\n")
+    print(f"{Colors.GREEN}[+] Coverage exported to {output_path}{Colors.ENDC}")
 
 def main():
     parser = argparse.ArgumentParser(description="LLM Code Security Scanner")
     parser.add_argument("target", help="Path to the repository or directory to scan")
     parser.add_argument("--export", help="Export findings to a JSON file (e.g. report.json)", metavar="FILE")
 
+    parser.add_argument("--model", default="model.joblib")
+    parser.add_argument("--fail-on-critical", action="store_true", help="Exit with code 1 if any Critical finding exists (used by CI to block merges)")
+    parser.add_argument("--lcov", help="Export as lcov.info", metavar="FILE")
+
     args = parser.parse_args()
 
-    simulate_scan(args.target)
-    print_scorecard()
-    print_findings()
+
+    findings = scan_repo(args.target, model_path = args.model)
+
+    print_scorecard(findings)
+    print_findings(findings)
 
     if args.export:
-        export_json(args.export)
+        export_json(findings, args.export)
+
+    if args.fail_on_critical and any(f["severity"] == "Critical" for f in findings):
+        print(f"{Colors.FAIL}[!] Critical findings detected - failing the check.{Colors.ENDC}")
+        sys.exit(1)
+
+    if args.lcov:
+        export_lcov(findings, args.lcov)
 
 
 if __name__ == "__main__":
