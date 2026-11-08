@@ -1,0 +1,58 @@
+[
+  {
+    "file": "app.py",
+    "line": 199,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Sensitive secret values are formatted directly into the system prompt context, enabling users to extract confidential data via system prompt leakage.",
+    "fix": "Store sensitive secrets securely outside of system prompts and verify user attempts against isolated backend logic."
+  },
+  {
+    "file": "app.py",
+    "line": 203,
+    "category": "LLM01",
+    "severity": "High",
+    "explanation": "Unfiltered user input is passed directly to the LLM model alongside system instructions, exposing the application to direct prompt injection attacks.",
+    "fix": "Use robust guardrails, input sanitization, and structured prompt isolation formats to prevent user input from altering system instructions."
+  },
+  {
+    "file": "levels.py",
+    "line": 118,
+    "category": "LLM02",
+    "severity": "Medium",
+    "explanation": "Fallback flags and secrets are hardcoded directly in the source code dictionary, exposing confidential data if environment variables are unset or repository code is leaked.",
+    "fix": "Remove hardcoded default secret values from the source code and require flags to be supplied via secure environment variables or a secret management service."
+  },
+  {
+    "file": "levels.py",
+    "line": 97,
+    "category": "LLM01",
+    "severity": "High",
+    "explanation": "The system context directly embeds sensitive secrets while relying on empty or minimal prompt blacklists in early levels, leaving the model vulnerable to direct prompt injection.",
+    "fix": "Isolate system instructions from untrusted user inputs using secure prompt templates and robust output sanitization guards across all levels."
+  },
+  {
+    "file": "vulnerable.py",
+    "line": 9,
+    "category": "LLM07",
+    "severity": "High",
+    "explanation": "Confidential business logic and admin override codes are hardcoded directly within the system prompt.",
+    "fix": "Remove sensitive keys and administrative overrides from system prompts and enforce access control outside the LLM."
+  },
+  {
+    "file": "vulnerable.py",
+    "line": 22,
+    "category": "LLM01",
+    "severity": "High",
+    "explanation": "Untrusted user input is concatenated directly into system instructions, enabling prompt injection attacks.",
+    "fix": "Pass user inputs using designated message roles in structured chat APIs rather than string concatenation."
+  },
+  {
+    "file": "vulnerable.py",
+    "line": 33,
+    "category": "LLM05",
+    "severity": "Critical",
+    "explanation": "Unsanitized LLM output is executed directly as a raw SQL query, leading to SQL injection and unauthorized DB modification.",
+    "fix": "Parse LLM outputs into structured parameters and execute database queries using safe, parameterized prepared statements."
+  }
+]
